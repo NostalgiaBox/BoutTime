@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7236AF5C1F893AE600401C82 /* QuestionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7236AF5B1F893AE600401C82 /* QuestionList.plist */; };
 		7281F7081F7B4B25000C5F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281F7071F7B4B25000C5F73 /* AppDelegate.swift */; };
 		7281F70A1F7B4B25000C5F73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281F7091F7B4B25000C5F73 /* ViewController.swift */; };
 		7281F70D1F7B4B25000C5F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7281F70B1F7B4B25000C5F73 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7236AF5B1F893AE600401C82 /* QuestionList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QuestionList.plist; sourceTree = "<group>"; };
 		7281F7041F7B4B25000C5F73 /* BoutTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7281F7071F7B4B25000C5F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7281F7091F7B4B25000C5F73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				7281F7101F7B4B25000C5F73 /* LaunchScreen.storyboard */,
 				7281F7131F7B4B25000C5F73 /* Info.plist */,
 				7281F7351F7B55AF000C5F73 /* QuizModel.swift */,
+				7236AF5B1F893AE600401C82 /* QuestionList.plist */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7236AF5C1F893AE600401C82 /* QuestionList.plist in Resources */,
 				7281F7121F7B4B25000C5F73 /* LaunchScreen.storyboard in Resources */,
 				7281F70F1F7B4B25000C5F73 /* Assets.xcassets in Resources */,
 				7281F70D1F7B4B25000C5F73 /* Main.storyboard in Resources */,

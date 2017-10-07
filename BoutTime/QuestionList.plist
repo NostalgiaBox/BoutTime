@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>date</key>
+		<integer>1776</integer>
+		<key>text</key>
+		<string>Declaration of Independence is signed</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>56</integer>
+		<key>text</key>
+		<string>Huns Invade Europe</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>570</integer>
+		<key>text</key>
+		<string>Prophet Muhammed is born</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>470</integer>
+		<key>text</key>
+		<string>Fall of western Rome</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>618</integer>
+		<key>text</key>
+		<string>Start of Tang Dynasty</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1095</integer>
+		<key>text</key>
+		<string>The First Crusade Begins</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1513</integer>
+		<key>text</key>
+		<string>The Aztec Empire Falls</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1865</integer>
+		<key>text</key>
+		<string>Abolition of US Slavery</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1914</integer>
+		<key>text</key>
+		<string>Start of WW1</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1939</integer>
+		<key>text</key>
+		<string>Start of WW2</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1948</integer>
+		<key>text</key>
+		<string>Creation of Israel</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1991</integer>
+		<key>text</key>
+		<string>Fall of the Soviet Union</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>200</integer>
+		<key>text</key>
+		<string>First Law School is Created</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>596</integer>
+		<key>text</key>
+		<string>Toilet Paper is invented</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>900</integer>
+		<key>text</key>
+		<string>Gunpowder is Invented</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1119</integer>
+		<key>text</key>
+		<string>Compass is invented</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1605</integer>
+		<key>text</key>
+		<string>The first newspaper is printed in the Holy Roman Empire</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1700</integer>
+		<key>text</key>
+		<string>The first piano is built</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1783</integer>
+		<key>text</key>
+		<string>The first steamboat sets sail</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1816</integer>
+		<key>text</key>
+		<string>The first telegraph is built</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1872</integer>
+		<key>text</key>
+		<string>Stainless steel is invented</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1915</integer>
+		<key>text</key>
+		<string>The tank is invented</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1942</integer>
+		<key>text</key>
+		<string>The V-2 rocket is created</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1957</integer>
+		<key>text</key>
+		<string>The first artificial satellite, Sputnik, is launched</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>1971</integer>
+		<key>text</key>
+		<string>Email is invented</string>
+	</dict>
+	<dict>
+		<key>date</key>
+		<integer>2005</integer>
+		<key>text</key>
+		<string>YouTube is launched and changes the world of video</string>
+	</dict>
+</array>
+</plist>

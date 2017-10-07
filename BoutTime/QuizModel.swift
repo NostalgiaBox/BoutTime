@@ -17,6 +17,11 @@ enum Position: Int {
     case Four = 4
 }
 
+enum InventoryError: Error {
+    case invalidResource
+    case conversionFailure
+    case invalidSelection
+}
 
 struct Answer {
     var text : String
@@ -29,6 +34,41 @@ struct Answer {
     }
 }
 
+class PlistConverter {
+    static func array(fromFile name: String, ofType type: String) throws -> [AnyObject] {
+        guard let path = Bundle.main.path(forResource: name, ofType: type) else {
+            throw InventoryError.invalidResource
+        }
+        
+        guard let array = NSArray(contentsOfFile: path) as [AnyObject]? else {
+            throw InventoryError.conversionFailure
+        }
+        
+        return array
+    }
+}
+
+class InventoryUnarchiver {
+    static func questionList(fromDictionary array: [AnyObject]) throws -> [Answer] {
+        
+        var list: [Answer] = []
+        
+        for answer in array {
+            if let date = answer["date"] as? Int, let text = answer["text"] as? String {
+                let event = Answer(text: text, date: date)
+//
+//                guard let selection = VendingSelection(rawValue: key) else {
+//                    throw InventoryError.invalidSelection
+//                }
+                
+                list.append(event)
+            }
+        }
+        
+        
+        return list
+    }
+}
 
 class QuizQuestion {
     var Answer1 : Answer
@@ -54,26 +94,56 @@ class QuizQuestion {
 class Quiz {
     var Answers : [Answer]
     var Question : QuizQuestion
+    var score = 0
+    var count = 0
     func beginQuiz() {
-        
+        //TODO: Change this into a restart
         self.Answers.removeFirst()
         self.Answers.removeFirst()
         self.Answers.removeFirst()
         self.Answers.removeFirst()
         
+    }
+    
+    
+    func shuffleArray(array: [Answer]) -> [Answer] {
+        
+        var tempArray = array
+        for index in 0...array.count - 1 {
+            let randomNumber = arc4random_uniform(UInt32(tempArray.count - 1))
+            let randomIndex = Int(randomNumber)
+            tempArray[randomIndex] = array[index]
+        }
+        
+        return tempArray
     }
     
     func endQuiz() {
-        
+        //TODO: Build End Quiz
     }
     
     func nextQuestion() {
-    //TODO Check question count
+    
+        count += 1
+        if count >= 6 {
+            endQuiz()
+        }
+        else {
+        Answers = shuffleArray(array: Answers)
         self.Question = QuizQuestion(Answer1: Answers[0], Answer2: Answers[1], Answer3: Answers[2], Answer4: Answers[3])
         self.Answers.removeFirst()
         self.Answers.removeFirst()
         self.Answers.removeFirst()
         self.Answers.removeFirst()
+        }
+    }
+    
+    func checkAnswer() -> Bool {
+        let result = Question.checkAnswer()
+        if result {
+            score += 1
+        }
+        return Question.checkAnswer()
     }
     
     init(Answers: [Answer]){
@@ -82,8 +152,10 @@ class Quiz {
     }
 }
 
+
+
 var a1 = Answer(text: "This is an early Question", date: 1)
 var a2 = Answer(text: "This is a mid-early Question", date: 2)
 var a3 = Answer(text: "This is a mid-late Question", date: 3)
 var a4 = Answer(text: "This is a late Question", date: 4)
-let quiz  = Quiz(Answers: [a1, a2, a3, a4, a2, a3, a4, a1])
+

@@ -17,15 +17,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var DArrow1: UIButton!
     
     @IBOutlet weak var CheckButton: UIButton!
+    var quiz : Quiz
     
-    
+    required init?(coder aDecoder: NSCoder) {
+        do {
+            let array = try PlistConverter.array(fromFile: "QuestionList", ofType: "plist")
+            let answerList = try InventoryUnarchiver.questionList(fromDictionary: array)
+            quiz  = Quiz(Answers: answerList)
+        } catch let error {
+            fatalError("\(error)")
+        }
+        
+        super.init(coder: aDecoder)
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         LabelOne.text = "Boo!"
-        
+        quiz.nextQuestion()
         refreshDisplay()
     }
 

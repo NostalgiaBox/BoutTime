@@ -94,15 +94,17 @@ class QuizQuestion {
 class Quiz {
     var Answers : [Answer]
     var Question : QuizQuestion
+    var fullAnswers : [Answer]
     var score = 0
     var count = 0
+    var isOver = false
+    
     func beginQuiz() {
-        //TODO: Change this into a restart
-        self.Answers.removeFirst()
-        self.Answers.removeFirst()
-        self.Answers.removeFirst()
-        self.Answers.removeFirst()
-        
+        isOver = false
+        score = 0
+        count = 0
+        Answers = fullAnswers
+        nextQuestion()
     }
     
     
@@ -119,7 +121,7 @@ class Quiz {
     }
     
     func endQuiz() {
-        //TODO: Build End Quiz
+        isOver = true
     }
     
     func nextQuestion() {
@@ -148,6 +150,7 @@ class Quiz {
     
     init(Answers: [Answer]){
         self.Answers = Answers
+        self.fullAnswers = Answers
         self.Question = QuizQuestion(Answer1: Answers[0], Answer2: Answers[1], Answer3: Answers[2], Answer4: Answers[3])
     }
 }

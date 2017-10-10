@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var LabelThree: UILabel!
     @IBOutlet weak var LabelFour: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var endQuizView: UIView!
+    
+    
+    @IBOutlet weak var learnShakeLabel: UILabel!
     
     @IBOutlet weak var DArrow1: UIButton!
     @IBOutlet weak var UArrow2: UIButton!
@@ -30,11 +35,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextRoundButton: UIButton!
     
     @IBOutlet weak var CheckButton: UIButton!
-    var quiz : Quiz
+  //  var quiz : Quiz
     
     var seconds = 60
     var timer = Timer()
-    
+    var quiz : Quiz
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
@@ -66,6 +71,12 @@ class ViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
+    @IBAction func playAgainPressed() {
+        showStartQuiz()
+        quiz.beginQuiz()
+        unlockButtons()
+        refreshDisplay()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,13 +149,36 @@ class ViewController: UIViewController {
     
     @IBAction func nextRound(_ sender: Any) {
         if quiz.isOver {
-            
+           showEndQuiz()
         }
         else {
         quiz.nextQuestion()
         unlockButtons()
         refreshDisplay()
         }
+    }
+    
+    func showEndQuiz(){
+        view1.isHidden = true;
+        view2.isHidden = true;
+        view3.isHidden = true;
+        view4.isHidden = true;
+        endQuizView.isHidden = false;
+        nextRoundButton.isHidden = true;
+        timerLabel.isHidden = true;
+        learnShakeLabel.isHidden = true;
+        scoreLabel.text = "\(quiz.score)/6"
+    }
+    
+    func showStartQuiz() {
+        view1.isHidden = false;
+        view2.isHidden = false;
+        view3.isHidden = false;
+        view4.isHidden = false;
+        endQuizView.isHidden = true;
+        nextRoundButton.isHidden = false;
+        timerLabel.isHidden = false;
+        learnShakeLabel.isHidden = false;
     }
     
     func lockButtons(){
@@ -157,6 +191,7 @@ class ViewController: UIViewController {
         nextRoundButton.isHidden = false
         timer.invalidate()
         timerLabel.isHidden = true
+        learnShakeLabel.text = "Tap events to learn more"
     }
     
     func unlockButtons(){
@@ -170,6 +205,7 @@ class ViewController: UIViewController {
         resetTimer()
         timerLabel.isHidden = false
         timerLabel.text = "1:00"
+        learnShakeLabel.text = "Shake to submit answer"
     }
     
     func refreshDisplay(){

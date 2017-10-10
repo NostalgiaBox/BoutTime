@@ -109,15 +109,18 @@ class Quiz {
     
     
     func shuffleArray(array: [Answer]) -> [Answer] {
-        
         var tempArray = array
-        for index in 0...array.count - 1 {
-            let randomNumber = arc4random_uniform(UInt32(tempArray.count - 1))
-            let randomIndex = Int(randomNumber)
-            tempArray[randomIndex] = array[index]
+        var shuffled : [Answer] = []
+        for i in 0..<tempArray.count
+        {
+            let rand = Int(arc4random_uniform(UInt32(tempArray.count)))
+            
+            shuffled.append(tempArray[rand])
+            
+            tempArray.remove(at: rand)
         }
         
-        return tempArray
+        return shuffled
     }
     
     func endQuiz() {
@@ -127,16 +130,17 @@ class Quiz {
     func nextQuestion() {
     
         count += 1
+        
+        Answers = shuffleArray(array: Answers)
+        Question = QuizQuestion(Answer1: Answers[0], Answer2: Answers[1], Answer3: Answers[2], Answer4: Answers[3])
+            Answers.remove(at: 3)
+            Answers.remove(at: 2)
+            Answers.remove(at: 1)
+            Answers.remove(at: 0)
+            print(Answers)
+        
         if count >= 6 {
             endQuiz()
-        }
-        else {
-        Answers = shuffleArray(array: Answers)
-        self.Question = QuizQuestion(Answer1: Answers[0], Answer2: Answers[1], Answer3: Answers[2], Answer4: Answers[3])
-        self.Answers.removeFirst()
-        self.Answers.removeFirst()
-        self.Answers.removeFirst()
-        self.Answers.removeFirst()
         }
     }
     

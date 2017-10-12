@@ -13,150 +13,200 @@
 		<integer>56</integer>
 		<key>text</key>
 		<string>Huns Invade Europe</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Huns</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>570</integer>
 		<key>text</key>
 		<string>Prophet Muhammed is born</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Muhammad</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>470</integer>
 		<key>text</key>
 		<string>Fall of western Rome</string>
+		<key>url</key>
+		<string>http://www.ushistory.org/civ/6f.asp</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>618</integer>
 		<key>text</key>
 		<string>Start of Tang Dynasty</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Tang_dynasty</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1095</integer>
+		<real>1095</real>
 		<key>text</key>
 		<string>The First Crusade Begins</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/First_Crusade</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>1513</integer>
 		<key>text</key>
 		<string>The Aztec Empire Falls</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Aztec_Empire</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>1865</integer>
 		<key>text</key>
 		<string>Abolition of US Slavery</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Slavery_in_the_United_States#The_end_of_slavery</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1914</integer>
+		<real>1914</real>
 		<key>text</key>
 		<string>Start of WW1</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/World_War_I</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1939</integer>
+		<real>1939</real>
 		<key>text</key>
 		<string>Start of WW2</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/World_War_II</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1948</integer>
+		<real>1948</real>
 		<key>text</key>
 		<string>Creation of Israel</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Israel#Early_years_of_the_State_of_Israel</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1991</integer>
+		<real>1991</real>
 		<key>text</key>
 		<string>Fall of the Soviet Union</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>200</integer>
 		<key>text</key>
 		<string>First Law School is Created</string>
+		<key>url</key>
+		<string>http://www.duhaime.org/LawMuseum/LawArticle-1538/250-The-First-Law-School.aspx</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>596</integer>
 		<key>text</key>
-		<string>Toilet Paper is invented</string>
+		<string>Toilet Paper is invented in China</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Toilet_paper</string>
 	</dict>
 	<dict>
 		<key>date</key>
 		<integer>900</integer>
 		<key>text</key>
 		<string>Gunpowder is Invented</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Gunpowder#China</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1119</integer>
+		<real>1119</real>
 		<key>text</key>
-		<string>Compass is invented</string>
+		<string>Compass is used for nautical travel</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Compass</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1605</integer>
+		<real>1605</real>
 		<key>text</key>
 		<string>The first newspaper is printed in the Holy Roman Empire</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Newspaper#History</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1700</integer>
+		<real>1700</real>
 		<key>text</key>
 		<string>The first piano is built</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Piano</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1783</integer>
+		<real>1783</real>
 		<key>text</key>
 		<string>The first steamboat sets sail</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Steamboat#History</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1816</integer>
+		<real>1816</real>
 		<key>text</key>
 		<string>The first telegraph is built</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Telegraphy#Electrical_telegraphs</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1872</integer>
+		<real>1872</real>
 		<key>text</key>
 		<string>Stainless steel is invented</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Stainless_steel#History</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1915</integer>
+		<real>1915</real>
 		<key>text</key>
 		<string>The tank is invented</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Tank#History</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1942</integer>
+		<real>1942</real>
 		<key>text</key>
 		<string>The V-2 rocket is created</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/V-2_rocket</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1957</integer>
+		<real>1957</real>
 		<key>text</key>
 		<string>The first artificial satellite, Sputnik, is launched</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Sputnik_1</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>1971</integer>
+		<real>1971</real>
 		<key>text</key>
 		<string>Email is invented</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Email</string>
 	</dict>
 	<dict>
 		<key>date</key>
-		<integer>2005</integer>
+		<real>2005</real>
 		<key>text</key>
 		<string>YouTube is launched and changes the world of video</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/YouTube</string>
 	</dict>
 </array>
 </plist>

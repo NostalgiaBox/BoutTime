@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var endQuizView: UIView!
     
+    @IBOutlet weak var eventOneButton: UIButton!
+    @IBOutlet weak var eventTwoButton: UIButton!
+    @IBOutlet weak var eventThreeButton: UIButton!
+    @IBOutlet weak var eventFourButton: UIButton!
     
     @IBOutlet weak var learnShakeLabel: UILabel!
     
@@ -40,6 +44,7 @@ class ViewController: UIViewController {
     var seconds = 60
     var timer = Timer()
     var quiz : Quiz
+    var urlString = ""
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
@@ -52,6 +57,13 @@ class ViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mySegue"{
+            let vc = segue.destination as! WebViewController
+            vc.urlString = urlString
+        }
+    }
+    
     func resetTimer(){
         seconds = 10
         runTimer()
@@ -115,7 +127,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    @IBAction func viewEvent(_ sender: UIButton) {
+     //   prepare(for: , sender: <#T##Any?#>)
+        let stoyrboard = UIStoryboard(name: "Main", bundle: nil)
+        switch sender.tag {
+        case 1:
+            urlString = quiz.Question.Answer1.url
+        case 2:
+            urlString = quiz.Question.Answer2.url
+        case 3:
+            urlString = quiz.Question.Answer3.url
+        case 4:
+            urlString = quiz.Question.Answer4.url
+        default:
+          //  withIdentifier: the used storyboard ID:
+            print("No URL!")
+        }
+        performSegue(withIdentifier: "mySegue", sender: self)
+    }
+ 
     @IBAction func switchAnswer(_ sender: UIButton) {
         var tempAnswer : Answer
         switch sender.tag {
@@ -170,6 +200,12 @@ class ViewController: UIViewController {
         scoreLabel.text = "\(quiz.score)/6"
     }
     
+    func linksEnabled(enabled: Bool){
+        eventOneButton.isEnabled = enabled
+        eventTwoButton.isEnabled = enabled
+        eventThreeButton.isEnabled = enabled
+        eventFourButton.isEnabled = enabled
+    }
     func showStartQuiz() {
         view1.isHidden = false;
         view2.isHidden = false;
@@ -188,6 +224,7 @@ class ViewController: UIViewController {
         UArrow3.isEnabled = false
         DArrow3.isEnabled = false
         UArrow4.isEnabled = false
+        linksEnabled(enabled: true)
         nextRoundButton.isHidden = false
         timer.invalidate()
         timerLabel.isHidden = true
@@ -201,6 +238,7 @@ class ViewController: UIViewController {
         UArrow3.isEnabled = true
         DArrow3.isEnabled = true
         UArrow4.isEnabled = true
+        linksEnabled(enabled: false)
         nextRoundButton.isHidden = true
         resetTimer()
         timerLabel.isHidden = false

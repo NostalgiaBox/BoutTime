@@ -26,11 +26,12 @@ enum InventoryError: Error {
 struct Answer {
     var text : String
     var date : Int
-    
-    init(text: String, date: Int)
+    var url : String
+    init(text: String, date: Int, url: String)
     {
         self.text = text
         self.date = date
+        self.url = url
     }
 }
 
@@ -54,8 +55,8 @@ class InventoryUnarchiver {
         var list: [Answer] = []
         
         for answer in array {
-            if let date = answer["date"] as? Int, let text = answer["text"] as? String {
-                let event = Answer(text: text, date: date)
+            if let date = answer["date"] as? Int, let text = answer["text"] as? String, let url = answer["url"] as? String {
+                let event = Answer(text: text, date: date, url: url)
 //
 //                guard let selection = VendingSelection(rawValue: key) else {
 //                    throw InventoryError.invalidSelection
@@ -159,10 +160,4 @@ class Quiz {
     }
 }
 
-
-
-var a1 = Answer(text: "This is an early Question", date: 1)
-var a2 = Answer(text: "This is a mid-early Question", date: 2)
-var a3 = Answer(text: "This is a mid-late Question", date: 3)
-var a4 = Answer(text: "This is a late Question", date: 4)
 

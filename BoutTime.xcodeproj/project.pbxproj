@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		721505421F896D3900A1E466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 721505411F896D3900A1E466 /* Assets.xcassets */; };
 		7236AF5C1F893AE600401C82 /* QuestionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7236AF5B1F893AE600401C82 /* QuestionList.plist */; };
+		726D43C61F8EC34D00E60D41 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D43C51F8EC34D00E60D41 /* WebViewController.swift */; };
 		7281F7081F7B4B25000C5F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281F7071F7B4B25000C5F73 /* AppDelegate.swift */; };
 		7281F70A1F7B4B25000C5F73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281F7091F7B4B25000C5F73 /* ViewController.swift */; };
 		7281F70D1F7B4B25000C5F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7281F70B1F7B4B25000C5F73 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		721505411F896D3900A1E466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7236AF5B1F893AE600401C82 /* QuestionList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QuestionList.plist; sourceTree = "<group>"; };
+		726D43C51F8EC34D00E60D41 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		7281F7041F7B4B25000C5F73 /* BoutTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7281F7071F7B4B25000C5F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7281F7091F7B4B25000C5F73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				721505411F896D3900A1E466 /* Assets.xcassets */,
 				7281F7071F7B4B25000C5F73 /* AppDelegate.swift */,
+				726D43C51F8EC34D00E60D41 /* WebViewController.swift */,
 				7281F7091F7B4B25000C5F73 /* ViewController.swift */,
 				7281F70B1F7B4B25000C5F73 /* Main.storyboard */,
 				7281F7101F7B4B25000C5F73 /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 				7281F70A1F7B4B25000C5F73 /* ViewController.swift in Sources */,
 				7281F7361F7B55AF000C5F73 /* QuizModel.swift in Sources */,
 				7281F7081F7B4B25000C5F73 /* AppDelegate.swift in Sources */,
+				726D43C61F8EC34D00E60D41 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

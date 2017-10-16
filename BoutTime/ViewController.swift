@@ -45,18 +45,28 @@ class ViewController: UIViewController {
     var timer = Timer()
     var quiz : Quiz
     var urlString = ""
+    
+    var isTimerRunning = false
+    
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
     @objc func updateTimer() {
         seconds -= 1     //This will decrement(count down)the seconds.
-        timerLabel.text = "\(seconds)"
+        timerLabel.text = timeString(time: TimeInterval(seconds))
         if seconds < 0 {
             checkAnswer()
         }
     }
-
+    
+    func timeString(time:TimeInterval) -> String {
+       
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%01i:%02i", minutes, seconds)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mySegue"{
             let vc = segue.destination as! WebViewController
@@ -65,11 +75,9 @@ class ViewController: UIViewController {
     }
     
     func resetTimer(){
-        seconds = 10
+        seconds = 60
         runTimer()
     }
-    
-    var isTimerRunning = false
     
     required init?(coder aDecoder: NSCoder) {
         do {
@@ -81,13 +89,6 @@ class ViewController: UIViewController {
         }
         
         super.init(coder: aDecoder)
-    }
-
-    @IBAction func playAgainPressed() {
-        showStartQuiz()
-        quiz.beginQuiz()
-        unlockButtons()
-        refreshDisplay()
     }
     
     override func viewDidLoad() {
@@ -127,9 +128,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    func checkAnswer(){
+        if quiz.checkAnswer(){
+            nextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: .normal)
+        } else {
+            nextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: .normal)
+            
+        }
+        lockButtons()
+    }
+    
+    
+    @IBAction func playAgainPressed() {
+        showStartQuiz()
+        quiz.beginQuiz()
+        unlockButtons()
+        refreshDisplay()
+    }
+    
     @IBAction func viewEvent(_ sender: UIButton) {
-     //   prepare(for: , sender: <#T##Any?#>)
-        let stoyrboard = UIStoryboard(name: "Main", bundle: nil)
+        //   prepare(for: , sender: <#T##Any?#>)
+        
         switch sender.tag {
         case 1:
             urlString = quiz.Question.Answer1.url
@@ -140,12 +161,12 @@ class ViewController: UIViewController {
         case 4:
             urlString = quiz.Question.Answer4.url
         default:
-          //  withIdentifier: the used storyboard ID:
+            //  withIdentifier: the used storyboard ID:
             print("No URL!")
         }
         performSegue(withIdentifier: "mySegue", sender: self)
     }
- 
+    
     @IBAction func switchAnswer(_ sender: UIButton) {
         var tempAnswer : Answer
         switch sender.tag {
@@ -166,17 +187,6 @@ class ViewController: UIViewController {
         }
         refreshDisplay()
     }
-    
-    func checkAnswer(){
-        if quiz.checkAnswer(){
-            nextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: .normal)
-        } else {
-            nextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: .normal)
-            
-        }
-        lockButtons()
-    }
-    
     @IBAction func nextRound(_ sender: Any) {
         if quiz.isOver {
            showEndQuiz()

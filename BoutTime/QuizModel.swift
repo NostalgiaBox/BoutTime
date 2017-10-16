@@ -17,10 +17,11 @@ enum Position: Int {
     case Four = 4
 }
 
-enum InventoryError: Error {
+enum QuestionError: Error {
     case invalidResource
     case conversionFailure
     case invalidSelection
+    case noQuestionsLeft
 }
 
 struct Answer {
@@ -38,11 +39,11 @@ struct Answer {
 class PlistConverter {
     static func array(fromFile name: String, ofType type: String) throws -> [AnyObject] {
         guard let path = Bundle.main.path(forResource: name, ofType: type) else {
-            throw InventoryError.invalidResource
+            throw QuestionError.invalidResource
         }
         
         guard let array = NSArray(contentsOfFile: path) as [AnyObject]? else {
-            throw InventoryError.conversionFailure
+            throw QuestionError.conversionFailure
         }
         
         return array
@@ -112,7 +113,7 @@ class Quiz {
     func shuffleArray(array: [Answer]) -> [Answer] {
         var tempArray = array
         var shuffled : [Answer] = []
-        for i in 0..<tempArray.count
+        for _ in 0..<tempArray.count
         {
             let rand = Int(arc4random_uniform(UInt32(tempArray.count)))
             
@@ -128,8 +129,9 @@ class Quiz {
         isOver = true
     }
     
-    func nextQuestion() {
-    
+    func nextQuestion(){
+        
+        
         count += 1
         
         Answers = shuffleArray(array: Answers)
@@ -143,6 +145,7 @@ class Quiz {
         if count >= 6 {
             endQuiz()
         }
+       
     }
     
     func checkAnswer() -> Bool {
